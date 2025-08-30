@@ -5,8 +5,10 @@ https://leetcode.com/problems/longest-substring-without-repeating-characters/
 Time complexity: O(n)
 Space complexity: O(n)
 """
+
+
 class Solution:
- def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring(self, s: str) -> int:
         seen = []
         left = 0
         max_len = 0
@@ -22,9 +24,10 @@ class Solution:
 
 
 def main():
-    test_case = 'pwwkew'
+    test_case = "pwwkew"
     sol = Solution()
     print(sol.lengthOfLongestSubstring(test_case))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

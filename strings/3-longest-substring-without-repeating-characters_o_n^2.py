@@ -6,6 +6,8 @@ Time complexity: O(n^2)
 Space complexity: O(n)
 
 """
+
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) == 1:
@@ -13,10 +15,10 @@ class Solution:
 
         ans = []
         output = 0
-        for i in range(len(s)-1):
+        for i in range(len(s) - 1):
             ans.append(s[i])
             print(f"i: {i}, s[i]:{s[i]}, ans:{ans}")
-            for j in range(i+1, len(s)):
+            for j in range(i + 1, len(s)):
                 print(f"j: {j}, s[j]:{s[j]}, ans:{ans}")
                 if s[j] in ans:
                     print(f"output: {output}")
@@ -28,16 +30,17 @@ class Solution:
                     break
                 else:
                     ans.append(s[j])
-                    if j == len(s)-1 and output <= len(ans):
+                    if j == len(s) - 1 and output <= len(ans):
                         output = len(ans)
             ans = []
         return output
 
 
 def main():
-    test_case = 'au'
+    test_case = "au"
     sol = Solution()
     print(sol.lengthOfLongestSubstring(test_case))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
