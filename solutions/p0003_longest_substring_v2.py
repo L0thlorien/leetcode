@@ -1,10 +1,17 @@
 """
-good solution for
 3. Longest Substring Without Repeating Characters
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Difficulty: Medium
+
+Given a string s, find the length of the longest substring without repeating characters.
+
 Time complexity: O(n)
 Space complexity: O(n)
+
+This is an optimized sliding window solution.
 """
+
+from typing import List
 
 
 class Solution:
@@ -23,11 +30,10 @@ class Solution:
         return max_len
 
 
-def main():
-    test_case = "pwwkew"
-    sol = Solution()
-    print(sol.lengthOfLongestSubstring(test_case))
-
-
-if __name__ == "__main__":
-    main()
+test_cases = [
+    {"input": {"s": "abcabcbb"}, "expected": 3},
+    {"input": {"s": "bbbbb"}, "expected": 1},
+    {"input": {"s": "pwwkew"}, "expected": 3},
+    {"input": {"s": "au"}, "expected": 2},
+    {"input": {"s": " "}, "expected": 1},
+]

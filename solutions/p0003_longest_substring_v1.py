@@ -1,11 +1,17 @@
 """
-brootforce solution for
 3. Longest Substring Without Repeating Characters
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Difficulty: Medium
+
+Given a string s, find the length of the longest substring without repeating characters.
+
 Time complexity: O(n^2)
 Space complexity: O(n)
 
+Note: This is a brute force solution. See p0003_longest_substring_v2.py for optimized O(n) version.
 """
+
+from typing import List
 
 
 class Solution:
@@ -17,15 +23,10 @@ class Solution:
         output = 0
         for i in range(len(s) - 1):
             ans.append(s[i])
-            print(f"i: {i}, s[i]:{s[i]}, ans:{ans}")
             for j in range(i + 1, len(s)):
-                print(f"j: {j}, s[j]:{s[j]}, ans:{ans}")
                 if s[j] in ans:
-                    print(f"output: {output}")
-                    print(f"len ans: {len(ans)}")
                     if output <= len(ans):
                         output = len(ans)
-                    print(ans)
                     ans = []
                     break
                 else:
@@ -36,11 +37,11 @@ class Solution:
         return output
 
 
-def main():
-    test_case = "au"
-    sol = Solution()
-    print(sol.lengthOfLongestSubstring(test_case))
-
-
-if __name__ == "__main__":
-    main()
+# Test cases
+test_cases = [
+    {"input": {"s": "abcabcbb"}, "expected": 3},
+    {"input": {"s": "bbbbb"}, "expected": 1},
+    {"input": {"s": "pwwkew"}, "expected": 3},
+    {"input": {"s": "au"}, "expected": 2},
+    {"input": {"s": " "}, "expected": 1},
+]
